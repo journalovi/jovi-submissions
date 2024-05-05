@@ -55,7 +55,7 @@ body:
 
 
       **NOTE:** If you wish to submit your paper anonymously, write "anonymous" in this box. After creating this submission issue, 
-      email [submit@journalovi.org](mailto:submit@journalovi.org) with a reference to this issue and a list of your authors.
+      email [submit@journalovi.org](mailto:submit@journalovi.org) with a link to the created issue and a list of your authors.
   validations:
     required: true
 - type: textarea
@@ -84,6 +84,7 @@ body:
     description: >
       What format and technical setup does your paper require? If it is "Other/Unsure", provide a description below.
     options:
+    - 
     - Quarto
     - Idyll
     - RMarkdown
@@ -126,8 +127,9 @@ body:
       
       - For static HTML + JavaScript, a rendering workflow is not required, simply write your paper in `index.html` in the root folder of the repository.
     options:
-    - I require assistance to set up Github Pages
+    - 
     - I have set up Github Pages
+    - I require assistance to set up Github Pages
   validations:
     required: true
 
@@ -136,7 +138,36 @@ body:
     label: Tech checklist
     description: >
       These checks help ensure that we will be able to correctly set up the rendering of your paper on the JoVI website. If you are unsure
-      of any of these checkboxes, leave them blank. Then, after creating this issue, and reply to the issues with a comment explaining what 
+      of any of these checkboxes, leave them blank. Then, after creating this issue, reply with a comment explaining what 
       you are unsure about. The Tech Chair will reply and help get your submission set up.
     options:
-    - label: TBD
+    - label: >
+      Ensure the rendered version of the paper contains a notice infobox at the top that the paper is under review at JoVI.
+
+      
+      In Quarto this looks like:
+
+
+      ```
+      
+      ::: {.callout-important appearance="simple"}
+      
+      ## Under Review {.unnumbered}
+      
+      This paper is [under review](https://www.journalovi.org/under-review.html) on the experimental track of the [Journal of Visualization and Interaction](https://www.journalovi.org/). See the [reviewing process](https://github.com/journalovi/20xx-repo-name/issues).
+      
+      :::
+      
+      ```
+
+
+      In HTML this could be:
+
+      ```
+      
+      <p><strong>Under Review:</strong> This paper is <a href="https://www.journalovi.org/under-review.html">under review</a> on the experimental track of the <a href="https://www.journalovi.org/">Journal of Visualization and Interaction</a>. See the <a href="https://github.com/journalovi/20xx-repo-name/issues">reviewing process</a>.</p>
+   
+      ```
+
+  validations:
+    required: true
