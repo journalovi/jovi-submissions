@@ -141,31 +141,31 @@ body:
       you are unsure about. The Tech Chair will reply and help get your submission set up.
     options:
     - label: >
-      Ensure the rendered version of the paper contains a notice infobox at the top that the paper is under review at JoVI.
+        Ensure the rendered version of the paper contains a notice infobox at the top that the paper is under review at JoVI.
       
       
-      In Quarto this looks like:
+        In Quarto this looks like:
       
       
-      ```
+        ```
       
-      ::: {.callout-important appearance="simple"}
+        ::: {.callout-important appearance="simple"}
       
-      ## Under Review {.unnumbered}
+        ## Under Review {.unnumbered}
       
-      This paper is [under review](https://www.journalovi.org/under-review.html) on the experimental track of the [Journal of Visualization and Interaction](https://www.journalovi.org/). See the [reviewing process](https://github.com/journalovi/20xx-repo-name/issues).
+        This paper is [under review](https://www.journalovi.org/under-review.html) on the experimental track of the [Journal of Visualization and Interaction](https://www.journalovi.org/). See the [reviewing process](https://github.com/journalovi/20xx-repo-name/issues).
       
-      :::
+        :::
       
-      ```
+        ```
       
       
-      In HTML this could be:
+        In HTML this could be:
       
-      ```
+        ```
       
-      <p><strong>Under Review:</strong> This paper is <a href="https://www.journalovi.org/under-review.html">under review</a> on the experimental track of the <a href="https://www.journalovi.org/">Journal of Visualization and Interaction</a>. See the <a href="https://github.com/journalovi/20xx-repo-name/issues">reviewing process</a>.</p>
+        <p><strong>Under Review:</strong> This paper is <a href="https://www.journalovi.org/under-review.html">under review</a> on the experimental track of the <a href="https://www.journalovi.org/">Journal of Visualization and Interaction</a>. See the <a href="https://github.com/journalovi/20xx-repo-name/issues">reviewing process</a>.</p>
       
-      ```
+        ```
   validations:
     required: true
