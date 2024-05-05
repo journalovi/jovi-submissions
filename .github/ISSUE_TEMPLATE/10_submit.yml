@@ -153,7 +153,9 @@ body:
       
       ## Under Review {.unnumbered}
       
-      This paper is [under review](https://www.journalovi.org/under-review.html) on the experimental track of the [Journal of Visualization and Interaction](https://www.journalovi.org/). See the [reviewing process](https://github.com/journalovi/20xx-repo-name/issues).
+      This paper is [under review](https://www.journalovi.org/under-review.html) on the experimental track of
+      the [Journal of Visualization and Interaction](https://www.journalovi.org/). See the 
+      [reviewing process](https://github.com/journalovi/20xx-repo-name/issues).
       
       :::
       
@@ -164,11 +166,32 @@ body:
       
       ```
       
-      <p><strong>Under Review:</strong> This paper is <a href="https://www.journalovi.org/under-review.html">under review</a> on the experimental track of the <a href="https://www.journalovi.org/">Journal of Visualization and Interaction</a>. See the <a href="https://github.com/journalovi/20xx-repo-name/issues">reviewing process</a>.</p>
+      <p><strong>Under Review:</strong> This paper is <a href="https://www.journalovi.org/under-review.html">under review</a>
+      on the experimental track of the <a href="https://www.journalovi.org/">Journal of Visualization and Interaction</a>.
+      See the <a href="https://github.com/journalovi/20xx-repo-name/issues">reviewing process</a>.</p>
       
       ```
     options:
     - label: The `<title>` tag of my page contains the title of my article
     - label: The article contains an infobox indicating it is under review at JoVI
+  validations:
+    required: true
+- type: checkboxes
+  attributes:
+    label: Required sections
+    description: >
+      Ensure your article has the following required sections (not necessarily in the order listed below). See the 
+      [Author Guidelines](https://www.journalovi.org/author-guide.html) for more information.
+    options:
+    - label: Abstract
+    - label: >
+        A navigational aid, such as a table of contents, links or buttons between sections, or an option to switch between 
+        paper-mode and interactive mode (for more interactive/experimental articles). Some articles (e.g,. narrative visualization) might
+        lend themselves to be progressively disclosed without an overview.
+    - label: Research materials
+    - label: Authorship statement (leave a placeholder if submitting anonymously)
+    - label: License
+    - label: Conflicts of Interest
+
   validations:
     required: true
