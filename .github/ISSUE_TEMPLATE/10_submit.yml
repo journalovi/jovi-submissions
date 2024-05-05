@@ -52,18 +52,17 @@ body:
       
       ```
 
-      
-      > [!NOTE]
-      
-      > If you wish to submit your paper anonymously, write "anonymous" in the `Authors` box. After creating this submission issue, 
+
+      **NOTE:** If you wish to submit your paper anonymously, write "anonymous" in the `Authors` box. After creating this submission issue, 
       email [submit@journalovi.org](mailto:submit@journalovi.org) with a reference to this issue and a list of your authors.
   validations:
     required: true
 - type: textarea
   attributes:
     label: Github IDs
-    description: |
-      Provide a list of github usernames of all authors who wish to have write access to the paper during revisions, with one username per line.
+    description: >
+      Provide a list of github usernames of all authors who wish to have write access to the paper during revisions, 
+      with one username per line.
   validations:
     required: true
 - type: textarea
@@ -109,18 +108,21 @@ body:
       setup is that you have a Github action that renders your paper when the source it changes. Some examples:
 
 
-      * [A workflow for Quarto papers](https://github.com/journalovi/jovi-template-quarto/blob/main/.github/workflows/publish.yml). This is used
+      - [A workflow for Quarto papers](https://github.com/journalovi/jovi-template-quarto/blob/main/.github/workflows/publish.yml). This is used
       by the JoVI Quarto template.
 
-      * [A workflow for Idyll papers](https://github.com/journalovi/2024-Cashman-PAC-learning-game/blob/master/.github/workflows/publish.yml). This
-      can be adapted to custom rendering pipelines easily by changing the lines that run `node` and `npm` and ensuring the last step copies the
-      correct output folder to the `gh-pages` branch. See an example of how this workflow was adapted to a custom rendering pipeline
-      [here](https://github.com/journalovi/2024-luong-graphical-models/blob/main/.github/workflows/publish.yml).
+      - [A workflow for Idyll papers](https://github.com/journalovi/2024-Cashman-PAC-learning-game/blob/master/.github/workflows/publish.yml). 
       
-      * For static HTML + JavaScript, a rendering workflow is not required, simply write your paper in `index.html` in the root folder of the repository.
+      - [A workflow for a custom rendering pipeline](https://github.com/journalovi/2024-luong-graphical-models/blob/main/.github/workflows/publish.yml).
+      This is was adapted from the Idyll workflow by changing the lines that run `node` and `npm` and ensuring the last step copies the
+      correct output folder to the `gh-pages` branch.
+      
+      - For static HTML + JavaScript, a rendering workflow is not required, simply write your paper in `index.html` in the root folder of the repository.
     options:
     - label: I have set up Github Pages
-    - label: I have not set up Github Pages
+    - label: I have require assistance to set up Github Pages
+  validations:
+    required: true
 
 - type: checkboxes
   attributes:
