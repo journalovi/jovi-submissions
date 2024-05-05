@@ -2,7 +2,7 @@ name: "Submit an Article"
 description: 'Submit an article to the Experimental ("Github") Track at JoVI'
 title: "[SUBMISSION] <title>"
 labels: [submission]
-assignees: journalovi/tech-chair
+assignees: mjskay
 body:
 - type: markdown
   attributes:
@@ -89,12 +89,18 @@ body:
     - RMarkdown
     - Static HTML + JavaScript (e.g. Distill)
     - Shiny
-    - Other/Unsure
+    - Other/Unsure (describe below)
   validations:
     required: true
+- type: textarea
+  attributes:
+    label: Article format details
+    description: >
+      If you answered "Other/Unsure" above, describe your paper format or required technical setup. If the details are in a file 
+      in your repository (such as a README), you may also refer to that file.
 - type: dropdown
   attributes:
-    label: Github Pages Setup
+    label: Github Pages setup
     description: >
       Experimental track papers are served as HTML from [journalovi.org](https://www.journalovi.org/) using [Github Pages](https://pages.github.com/).
       Use this box to indicated if you have already set up Github Pages on your submitted repository.
@@ -120,8 +126,8 @@ body:
       
       - For static HTML + JavaScript, a rendering workflow is not required, simply write your paper in `index.html` in the root folder of the repository.
     options:
-    - label: I have set up Github Pages
-    - label: I require assistance to set up Github Pages
+    - I require assistance to set up Github Pages
+    - I have set up Github Pages
   validations:
     required: true
 
