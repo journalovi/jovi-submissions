@@ -99,7 +99,7 @@ body:
     description: >
       If you answered "Other/Unsure" above, describe your paper format or required technical setup. If the details are in a file 
       in your repository (such as a README), you may also refer to that file.
-- type: dropdown
+- type: checkboxes
   attributes:
     label: Github Pages setup
     description: >
@@ -107,10 +107,6 @@ body:
       Use this box to indicated if you have already set up Github Pages on your submitted repository.
 
 
-      **If you are not experienced using Github Pages**, it is not required for you to set it up prior to submitting (though it will make 
-      processing your submission faster).
-
-      
       **If you are experienced using Github Pages**, we recommend setting up Github Pages rendering on your own repository prior to submitting
       your paper. This will make it easier for the Tech Chair to adapt your paper to work with our setup. The most important aspect of the
       setup is that you have a Github action that renders your paper when the source it changes. Some examples:
@@ -126,46 +122,53 @@ body:
       correct output folder to the `gh-pages` branch.
       
       - For static HTML + JavaScript, a rendering workflow is not required, simply write your paper in `index.html` in the root folder of the repository.
+
+
+      **If you are not experienced using Github Pages**, it is not required for you to set it up prior to submitting (though it will make 
+      processing your submission faster). Leave this checkbox blank and the Tech Chair will assist you.      
     options:
-    - 
-    - I have set up Github Pages
-    - I require assistance to set up Github Pages
-  validations:
-    required: true
+    - label: I have set up Github Pages
 - type: checkboxes
   attributes:
-    label: Tech checklist
+    label: Technical checklist
     description: >
-      These checks help ensure that we will be able to correctly set up the rendering of your paper on the JoVI website. If you are unsure
+      These checks help ensure that your rendered article contains the required information. If you are unsure
       of any of these checkboxes, leave them blank. Then, after creating this issue, reply with a comment explaining what 
       you are unsure about. The Tech Chair will reply and help get your submission set up.
+
+
+      In particular, we require the `<title></title>` tag of the rendered article contains the title of the paper as this
+      is used in some of our paper listing scripts.
+
+
+      We also require an infobox to be placed at the top of the paper indicating the paper is under review at JoVI.
+
+
+      In Quarto this looks like:
+      
+      
+      ```
+      
+      ::: {.callout-important appearance="simple"}
+      
+      ## Under Review {.unnumbered}
+      
+      This paper is [under review](https://www.journalovi.org/under-review.html) on the experimental track of the [Journal of Visualization and Interaction](https://www.journalovi.org/). See the [reviewing process](https://github.com/journalovi/20xx-repo-name/issues).
+      
+      :::
+      
+      ```
+      
+      
+      In HTML this could be:
+      
+      ```
+      
+      <p><strong>Under Review:</strong> This paper is <a href="https://www.journalovi.org/under-review.html">under review</a> on the experimental track of the <a href="https://www.journalovi.org/">Journal of Visualization and Interaction</a>. See the <a href="https://github.com/journalovi/20xx-repo-name/issues">reviewing process</a>.</p>
+      
+      ```
     options:
-    - label: >
-        Ensure the rendered version of the paper contains a notice infobox at the top that the paper is under review at JoVI.
-      
-      
-        In Quarto this looks like:
-      
-      
-        ```
-      
-        ::: {.callout-important appearance="simple"}
-      
-        ## Under Review {.unnumbered}
-      
-        This paper is [under review](https://www.journalovi.org/under-review.html) on the experimental track of the [Journal of Visualization and Interaction](https://www.journalovi.org/). See the [reviewing process](https://github.com/journalovi/20xx-repo-name/issues).
-      
-        :::
-      
-        ```
-      
-      
-        In HTML this could be:
-      
-        ```
-      
-        <p><strong>Under Review:</strong> This paper is <a href="https://www.journalovi.org/under-review.html">under review</a> on the experimental track of the <a href="https://www.journalovi.org/">Journal of Visualization and Interaction</a>. See the <a href="https://github.com/journalovi/20xx-repo-name/issues">reviewing process</a>.</p>
-      
-        ```
+    - label: The `<title>` tag of my page contains the title of my article
+    - label: The article contains an infobox indicating it is under review at JoVI
   validations:
     required: true
