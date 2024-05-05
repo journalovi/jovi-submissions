@@ -1,0 +1,44 @@
+name: "Submit an Article"
+description: Submit an article to the Experimental Track at JoVI
+title: "[SUBMISSION] <title>"
+labels: [submission]
+body:
+- type: markdown
+  attributes:
+    value: >
+      > [!IMPORTANT]
+      
+      > Please read the [Experimental Track submission instructions](https://www.journalovi.org/submit.html#experimental)
+      and the [Author Guidelines](https://www.journalovi.org/author-guide.html) before submitting your article.
+      
+
+      To submit your paper, fill out this form and submit the issue. Once you have submitted the issue, the JoVI
+      Technical Chair for the Experimental Track will bring your paper's repository into the JoVI Github organization
+      and contact you with further instructions.
+- type: input
+  attributes:
+    label: Title
+    description: >
+      Provide the title of your paper.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Authors
+    description: >
+      Author names
+  validations:
+    required: true
+- type: checkboxes
+  attributes:
+    label: Perceivable
+    description: >
+      These checks help ensure that users can easily identify content using their senses: sight, sound, and touch.
+
+      Learn more about these checks in [the Chartability section about perceivable](https://chartability.github.io/POUR-CAF/#perceivable).
+    options:
+    - label: Contrast of all text and elements is sufficient. Geometries and large text must have >3:1 contrast against background. Regular text must have >4.5:1.
+    - label: Content has non-visual alternatives. All figures have alt text and videos have transcripts. Equations are screen reader accessible.
+    - label: Font sizes for all texts are sufficiently large. Text must not be smaller than 9pt/12px in size. Ideally only minor text is rendered at 9pt (e.g., axis labels) while all other text is larger.
+    - label: Where possible within reason, the article works even if I could not perceive colors. Colors should be augmented with patterns, textures, other visual cues, or tooltips if possible.
+    - label: The article can be navigated comfortably with a screen reader. There are no unnecessary accessibility elements (e.g., axis ticks and labels) that clutter the screen reader experience.
