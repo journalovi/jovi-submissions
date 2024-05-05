@@ -22,20 +22,48 @@ body:
       Provide the title of your paper.
   validations:
     required: true
+- type: input
+  attributes:
+    label: Source repository URL
+    description: >
+      Provide the URL of the respository containing your paper (e.g., a Github repository). We will clone this repository into the JoVI organization.
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Desired URL stub
+    description: >
+      Provide a suggested URL stub in the form `20XX-LASTNAME-STUB` to be used for URLs for this paper on the JoVI website. For example, 
+      the paper [Gatherplot: A Non-Overlapping Scatterplot](https://www.journalovi.org/2023-park-gatherplots/) by Deokgun Park et al uses
+      the stub `2023-park-gatherplots`.
+  validations:
+    required: true
 - type: textarea
   attributes:
     label: Authors
-    description: |
+    description: >
       Provide a list of authors, their emails, and their institutions, with one author per line. For example: 
 
       ```
+      
       Joe Bob, joe@bob.com, Bobjoe University      
+      
       Jane Smith, jane@smith.com, Smithjane University
+      
       ```
 
       
       > [!NOTE]
-      > If you wish to submit your paper anonymously, write "anonymous" in the `Authors` box. After creating this submission issue, email [submit@journalovi.org](mailto:submit@journalovi.org) with a reference to this issue and a list of your authors.
+      
+      > If you wish to submit your paper anonymously, write "anonymous" in the `Authors` box. After creating this submission issue, 
+      email [submit@journalovi.org](mailto:submit@journalovi.org) with a reference to this issue and a list of your authors.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Github IDs
+    description: |
+      Provide a list of github usernames of all authors who wish to have write access to the paper during revisions, with one username per line.
   validations:
     required: true
 - type: textarea
@@ -52,16 +80,38 @@ body:
     required: true
 - type: checkboxes
   attributes:
-    label: Perceivable
+    label: Tech checklist
     description: >
-      These checks help ensure that users can easily identify content using their senses: sight, sound, and touch.
+      Experimental track papers are served as HTML from [journalovi.org](https://www.journalovi.org/) using [Github Pages](https://pages.github.com/).
+      Check this box if you have already set up Github Pages on your submitted repository.
 
-      Learn more about these checks in [the Chartability section about perceivable](https://chartability.github.io/POUR-CAF/#perceivable).
+      
+      **If you are experienced using Github Pages**, we recommend setting up Github Pages rendering on your own repository prior to submitting
+      your paper. This will make it easier for the Tech Chair to adapt your paper to work with our setup.
+
+      
+      **If you are not experienced using Github Pages**, it is not required for you to set it up prior to submitting (though it will make 
+      processing your submission faster). Leave this box blank and the Tech Chair will assist you.
+- type: dropdown
+  attributes:
+    label: Article format
+    description: >
+      What format and technical setup does your paper require? If it is "Other/Unsure", provide a description below.
     options:
-    - label: Contrast of all text and elements is sufficient. Geometries and large text must have >3:1 contrast against background. Regular text must have >4.5:1.
-    - label: Content has non-visual alternatives. All figures have alt text and videos have transcripts. Equations are screen reader accessible.
-    - label: Font sizes for all texts are sufficiently large. Text must not be smaller than 9pt/12px in size. Ideally only minor text is rendered at 9pt (e.g., axis labels) while all other text is larger.
-    - label: Where possible within reason, the article works even if I could not perceive colors. Colors should be augmented with patterns, textures, other visual cues, or tooltips if possible.
-    - label: The article can be navigated comfortably with a screen reader. There are no unnecessary accessibility elements (e.g., axis ticks and labels) that clutter the screen reader experience.
+    - label: Quarto
+    - label: Idyll
+    - label: RMarkdown
+    - label: Static HTML + JavaScript (e.g. Distill)
+    - label: Shiny
+    - label: Other/Unsure
   validations:
     required: true
+- type: checkboxes
+  attributes:
+    label: Tech checklist
+    description: >
+      These checks help ensure that we will be able to correctly set up the rendering of your paper on the JoVI website. If you are unsure
+      of any of these checkboxes, leave them blank. Then, after creating this issue, and reply to the issues with a comment explaining what 
+      you are unsure about. The Tech Chair will reply and help get your submission set up.
+    options:
+    - label: TBD
