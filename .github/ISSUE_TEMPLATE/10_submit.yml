@@ -78,20 +78,6 @@ body:
       - People who might be natural reviewers of your paper but with whom you have a conflict.
   validations:
     required: true
-- type: checkboxes
-  attributes:
-    label: Tech checklist
-    description: >
-      Experimental track papers are served as HTML from [journalovi.org](https://www.journalovi.org/) using [Github Pages](https://pages.github.com/).
-      Check this box if you have already set up Github Pages on your submitted repository.
-
-      
-      **If you are experienced using Github Pages**, we recommend setting up Github Pages rendering on your own repository prior to submitting
-      your paper. This will make it easier for the Tech Chair to adapt your paper to work with our setup.
-
-      
-      **If you are not experienced using Github Pages**, it is not required for you to set it up prior to submitting (though it will make 
-      processing your submission faster). Leave this box blank and the Tech Chair will assist you.
 - type: dropdown
   attributes:
     label: Article format
@@ -106,6 +92,36 @@ body:
     - label: Other/Unsure
   validations:
     required: true
+- type: dropdown
+  attributes:
+    label: Github Pages Setup
+    description: >
+      Experimental track papers are served as HTML from [journalovi.org](https://www.journalovi.org/) using [Github Pages](https://pages.github.com/).
+      Use this box to indicated if you have already set up Github Pages on your submitted repository.
+
+
+      **If you are not experienced using Github Pages**, it is not required for you to set it up prior to submitting (though it will make 
+      processing your submission faster).
+
+      
+      **If you are experienced using Github Pages**, we recommend setting up Github Pages rendering on your own repository prior to submitting
+      your paper. This will make it easier for the Tech Chair to adapt your paper to work with our setup. The most important aspect of the
+      setup is that you have a Github action that renders your paper when the source it changes. Some examples:
+
+
+      * [A workflow for Quarto papers](https://github.com/journalovi/jovi-template-quarto/blob/main/.github/workflows/publish.yml). This is used
+      by the JoVI Quarto template.
+
+      * [A workflow for Idyll papers](https://github.com/journalovi/2024-Cashman-PAC-learning-game/blob/master/.github/workflows/publish.yml). This
+      can be adapted to custom rendering pipelines easily by changing the lines that run `node` and `npm` and ensuring the last step copies the
+      correct output folder to the `gh-pages` branch. See an example of how this workflow was adapted to a custom rendering pipeline
+      [here](https://github.com/journalovi/2024-luong-graphical-models/blob/main/.github/workflows/publish.yml).
+      
+      * For static HTML + JavaScript, a rendering workflow is not required, simply write your paper in `index.html` in the root folder of the repository.
+    options:
+    - label: I have set up Github Pages
+    - label: I have not set up Github Pages
+
 - type: checkboxes
   attributes:
     label: Tech checklist
