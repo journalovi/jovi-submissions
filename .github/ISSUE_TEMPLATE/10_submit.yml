@@ -25,31 +25,24 @@ body:
 - type: textarea
   attributes:
     label: Authors
-    description: >
+    description: |
       Provide a list of authors, their emails, and their institutions, with one author per line. For example, 
 
-
       ```
-      Joe Bob, joe@bob.com, Bobjoe University
-      
+      Joe Bob, joe@bob.com, Bobjoe University      
       Jane Smith, jane@smith.com, Smithjane University
       ```
       
-      
       > [!NOTE]
-
-      > If you wish to submit your paper anonymously, write "anonymous" in the `Authors` box. After creating this submission issue,
-      email [submit@journalovi.org](mailto:submit@journalovi.org) with a reference to this issue and a list of your authors.
+      > If you wish to submit your paper anonymously, write "anonymous" in the `Authors` box. After creating this submission issue, email [submit@journalovi.org](mailto:submit@journalovi.org) with a reference to this issue and a list of your authors.
   validations:
     required: true
 - type: textarea
   attributes:
     label: Conflicts
-    description: >
+    description: |
       Provide a list of any folks who might review this paper with whom you would have conflicts, including
-      
       - JoVI Organizers or Editors (See the [People Page](https://www.journalovi.org/people.html))
-      
       - People who might be natural reviewers of your paper but with whom you have a conflict.
 
       We follow the [ACM COI policy](https://www.acm.org/publications/policies/conflict-of-interest).
