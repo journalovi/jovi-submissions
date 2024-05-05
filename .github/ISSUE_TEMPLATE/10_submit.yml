@@ -26,19 +26,16 @@ body:
   attributes:
     label: Authors
     description: >
-      > [!NOTE]
-
-      > If you wish to submit your paper anonymously, write "anonymous" in this box. After creating this submission issue,
-      email [submit@journalovi.org](mailto:submit@journalovi.org) with a reference to this issue and a list of your authors.
-      
-      Provide a list of authors, their emails, and their institutions, with one author per line. For example
-      
-      ```
-      Joe Bob, joe@bob.com, Bobjoe University
-      Jane Smith, jane@smith.org, Smithjane University
-      ```
+      Provide a list of authors, their emails, and their institutions, with one author per line. For example, `Joe Bob, joe@bob.com, Bobjoe University`
   validations:
     required: true
+- type: markdown
+  attributes:
+    value: >
+      > [!NOTE]
+
+      > If you wish to submit your paper anonymously, write "anonymous" in the `Authors` box. After creating this submission issue,
+      email [submit@journalovi.org](mailto:submit@journalovi.org) with a reference to this issue and a list of your authors.
 - type: checkboxes
   attributes:
     label: Perceivable
