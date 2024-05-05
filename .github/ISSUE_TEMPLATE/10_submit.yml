@@ -31,6 +31,7 @@ body:
 
       ```
       Joe Bob, joe@bob.com, Bobjoe University
+      
       Jane Smith, jane@smith.com, Smithjane University
       ```
       
@@ -39,6 +40,19 @@ body:
 
       > If you wish to submit your paper anonymously, write "anonymous" in the `Authors` box. After creating this submission issue,
       email [submit@journalovi.org](mailto:submit@journalovi.org) with a reference to this issue and a list of your authors.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Conflicts
+    description: >
+      Provide a list of any folks who might review this paper with whom you would have conflicts, including
+      
+      - JoVI Organizers or Editors (See the [People Page](https://www.journalovi.org/people.html))
+      
+      - People who might be natural reviewers of your paper but with whom you have a conflict.
+
+      We follow the [ACM COI policy](https://www.acm.org/publications/policies/conflict-of-interest).
   validations:
     required: true
 - type: checkboxes
@@ -54,3 +68,5 @@ body:
     - label: Font sizes for all texts are sufficiently large. Text must not be smaller than 9pt/12px in size. Ideally only minor text is rendered at 9pt (e.g., axis labels) while all other text is larger.
     - label: Where possible within reason, the article works even if I could not perceive colors. Colors should be augmented with patterns, textures, other visual cues, or tooltips if possible.
     - label: The article can be navigated comfortably with a screen reader. There are no unnecessary accessibility elements (e.g., axis ticks and labels) that clutter the screen reader experience.
+  validations:
+    required: true
