@@ -41,13 +41,13 @@ body:
 - type: textarea
   attributes:
     label: Conflicts
-    description: |
-      Provide a list of any folks who might review this paper with whom you would have conflicts, including:
+    description: >
+      Provide a list of any folks who might review this paper with whom you would have conflicts 
+      (we follow the [ACM COI policy](https://www.acm.org/publications/policies/conflict-of-interest)), including:
+      
       - JoVI Organizers or Editors (See the [People Page](https://www.journalovi.org/people.html))
+      
       - People who might be natural reviewers of your paper but with whom you have a conflict.
-
-
-      We follow the [ACM COI policy](https://www.acm.org/publications/policies/conflict-of-interest).
   validations:
     required: true
 - type: checkboxes
