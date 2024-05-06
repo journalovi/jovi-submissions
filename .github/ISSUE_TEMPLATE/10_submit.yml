@@ -100,6 +100,13 @@ body:
     - label: I have replaced `20XX-REPO-NAME` in the links in the infobox with my desired URL stub.
   validations:
     required: true
+- type: input
+  attributes:
+    label: Source repository URL
+    description: >
+      Provide the URL of the respository containing your paper (e.g., a Github repository). We will clone this repository into the JoVI organization.
+  validations:
+    required: true
 - type: checkboxes
   attributes:
     label: Github Pages setup
@@ -131,13 +138,6 @@ body:
       processing your submission faster). Leave this checkbox blank and the Tech Chair will assist you.      
     options:
     - label: I have set up Github Pages
-- type: input
-  attributes:
-    label: Source repository URL
-    description: >
-      Provide the URL of the respository containing your paper (e.g., a Github repository). We will clone this repository into the JoVI organization.
-  validations:
-    required: true
 - type: dropdown
   attributes:
     label: Article format
