@@ -188,14 +188,10 @@ body:
       each section are in the [Author Guidelines](https://www.journalovi.org/author-guide.html#sections).
     options:
     - label: Abstract
-    - label: >
-        A navigational aid, such as a table of contents, links or buttons between sections, or an option to switch between 
-        paper-mode and interactive mode (for more interactive/experimental articles). Some articles (e.g,. narrative visualization) might
-        lend themselves to be progressively disclosed without an overview.
+    - label: A navigational aid, such as a table of contents, links or buttons between sections, or an option to switch between paper-mode and interactive mode (for more interactive/experimental articles). Some articles (e.g,. narrative visualization) might lend themselves to be progressively disclosed without an overview.
     - label: Research materials
     - label: Authorship statement (leave a placeholder if submitting anonymously)
     - label: License (CC-BY or CC-BY-SA).
     - label: Conflicts of Interest
-
   validations:
     required: true
