@@ -209,3 +209,11 @@ body:
       - People who might be natural reviewers of your paper but with whom you have a conflict.
   validations:
     required: true
+- type: markdown
+  attributes:
+    value: >
+      > [!IMPORTANT]
+      
+      > If this submission is anonymous, after you create this issue, remember to email [submit@journalovi.org](mailto:submit@journalovi.org) 
+      
+      > with a link to the created issue and a list of your authors.
