@@ -112,8 +112,9 @@ body:
       setup is that you have a Github action that renders your paper when the source it changes. Some examples:
 
 
-      - [A workflow for Quarto papers](https://github.com/journalovi/jovi-template-quarto/blob/main/.github/workflows/publish.yml). This is used
-      by the JoVI Quarto template.
+      - [A workflow for Quarto papers](https://github.com/journalovi/jovi-template-quarto/blob/main/.github/workflows/publish.yml). If you used
+      the [JoVI Quarto template](https://github.com/journalovi/jovi-template-quarto) to write your paper, this is already set up for you and
+      you can tick the box below.
 
       - [A workflow for Idyll papers](https://github.com/journalovi/2024-Cashman-PAC-learning-game/blob/master/.github/workflows/publish.yml). 
       
