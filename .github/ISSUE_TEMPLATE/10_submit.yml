@@ -122,7 +122,7 @@ body:
       This is was adapted from the Idyll workflow by changing the lines that run `node` and `npm` and ensuring the last step copies the
       correct output folder to the `gh-pages` branch.
       
-      - For static HTML + JavaScript, a rendering workflow is not required, simply write your paper in `index.html` in the root folder of the repository.
+      - For static HTML + JavaScript, a rendering workflow is not required. Simply write your paper in `index.html` in the root folder of the repository.
 
 
       **If you are not experienced using Github Pages**, it is not required for you to set it up prior to submitting (though it will make 
