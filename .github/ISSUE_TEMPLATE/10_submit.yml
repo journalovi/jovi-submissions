@@ -138,6 +138,13 @@ body:
       processing your submission faster). Leave this checkbox blank and the Tech Chair will assist you.      
     options:
     - label: I have set up Github Pages
+- type: input
+  attributes:
+    label: Live paper URL
+    description: >
+      Provide the URL of a live version of your article webpage. We will use this to verify that we are able to correctly set up and serve your article.
+  validations:
+    required: true
 - type: dropdown
   attributes:
     label: Article format
