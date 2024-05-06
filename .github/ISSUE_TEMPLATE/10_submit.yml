@@ -126,6 +126,7 @@ body:
       - For static HTML + JavaScript, a rendering workflow is not required. Simply write your paper in `index.html` in the root folder of the repository.
 
 
+
       **If you are not experienced using Github Pages**, it is not required for you to set it up prior to submitting (though it will make 
       processing your submission faster). Leave this checkbox blank and the Tech Chair will assist you.      
     options:
@@ -183,6 +184,10 @@ body:
     description: >
       Provide a list of github usernames of all authors who wish to have write access to the paper during revisions, 
       with one username per line.
+
+
+      **NOTE:** If you wish to submit your paper anonymously, please create at least one anonymous Github account and list it here.
+      Remember to submit this form using an anonymous Github account.
   validations:
     required: true
 - type: textarea
