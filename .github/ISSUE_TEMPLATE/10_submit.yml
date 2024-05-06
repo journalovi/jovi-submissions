@@ -184,8 +184,8 @@ body:
   attributes:
     label: Required sections
     description: >
-      Ensure your article has the following required sections (not necessarily in the order listed below). See the 
-      [Author Guidelines](https://www.journalovi.org/author-guide.html) for more information.
+      Ensure your article has the following required sections (not necessarily in the order listed below). Details of
+      each section are in the [Author Guidelines](https://www.journalovi.org/author-guide.html#sections).
     options:
     - label: Abstract
     - label: >
@@ -194,7 +194,7 @@ body:
         lend themselves to be progressively disclosed without an overview.
     - label: Research materials
     - label: Authorship statement (leave a placeholder if submitting anonymously)
-    - label: License
+    - label: License (CC-BY or CC-BY-SA).
     - label: Conflicts of Interest
 
   validations:
