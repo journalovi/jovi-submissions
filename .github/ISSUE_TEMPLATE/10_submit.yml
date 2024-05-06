@@ -23,11 +23,19 @@ body:
       Provide the title of your paper.
   validations:
     required: true
-- type: input
+- type: checkboxes
   attributes:
-    label: Source repository URL
+    label: Required sections
     description: >
-      Provide the URL of the respository containing your paper (e.g., a Github repository). We will clone this repository into the JoVI organization.
+      Ensure your article has the following required sections (not necessarily in the order listed below). Details of
+      each section are in the [Author Guidelines](https://www.journalovi.org/author-guide.html#sections).
+    options:
+    - label: Abstract
+    - label: A navigational aid, such as a table of contents, links or buttons between sections, or an option to switch between paper-mode and interactive mode (for more interactive/experimental articles). Some articles (e.g,. narrative visualization) might lend themselves to be progressively disclosed without an overview.
+    - label: Research materials
+    - label: Authorship statement (leave a placeholder if submitting anonymously)
+    - label: License (CC-BY or CC-BY-SA).
+    - label: Conflicts of Interest
   validations:
     required: true
 - type: input
@@ -39,6 +47,89 @@ body:
       the stub `2023-park-gatherplots`.
   validations:
     required: true
+- type: checkboxes
+  attributes:
+    label: Technical checklist
+    description: >
+      These checks help ensure that your rendered article contains the required information. If you are unsure
+      of any of these checkboxes, leave them blank. Then, after creating this issue, reply with a comment explaining what 
+      you are unsure about. The Tech Chair will reply and help get your submission set up.
+
+
+      In particular, we require the `<title></title>` tag of the rendered article contains the title of the paper as this
+      is used in some of our paper listing scripts.
+
+
+      We also require an infobox to be placed at the top of the paper indicating the paper is under review at JoVI.
+
+
+      In Quarto this looks like:
+      
+      
+      ```
+      
+      ::: {.callout-important appearance="simple"}
+      
+      ## Under Review {.unnumbered}
+      
+      This paper is [under review](https://www.journalovi.org/under-review.html) on the experimental track of
+      
+      the [Journal of Visualization and Interaction](https://www.journalovi.org/). See the 
+      
+      [reviewing process](https://github.com/journalovi/20XX-REPO-NAME/issues).
+      
+      :::
+      
+      ```
+      
+      
+      In HTML this could be:
+      
+      ```
+      
+      <p><strong>Under Review:</strong> This paper is <a href="https://www.journalovi.org/under-review.html">under review</a>
+      
+      on the experimental track of the <a href="https://www.journalovi.org/">Journal of Visualization and Interaction</a>.
+      
+      See the <a href="https://github.com/journalovi/20XX-REPO-NAME/issues">reviewing process</a>.</p>
+      
+      ```
+    options:
+    - label: The `<title>` tag of my page contains the title of my article
+    - label: The article contains an infobox indicating it is under review at JoVI
+    - label: I have replaced `20XX-REPO-NAME` in the links in the infobox with my desired URL stub.
+  validations:
+    required: true
+- type: checkboxes
+  attributes:
+    label: Github Pages setup
+    description: >
+      Experimental track papers are served as HTML from [journalovi.org](https://www.journalovi.org/) using [Github Pages](https://pages.github.com/).
+      Use this box to indicated if you have already set up Github Pages on your submitted repository.
+
+
+      **If you are experienced using Github Pages**, we recommend setting up Github Pages rendering on your own repository prior to submitting
+      your paper. This will make it easier for the Tech Chair to adapt your paper to work with our setup. The most important aspect of the
+      setup is that you have a Github action that renders your paper when the source it changes. Some examples:
+
+
+      - [A workflow for Quarto papers](https://github.com/journalovi/jovi-template-quarto/blob/main/.github/workflows/publish.yml). If you used
+      the [JoVI Quarto template](https://github.com/journalovi/jovi-template-quarto) to write your paper, this is already set up for you and
+      you can tick the box below.
+
+      - [A workflow for Idyll papers](https://github.com/journalovi/2024-Cashman-PAC-learning-game/blob/master/.github/workflows/publish.yml). 
+      
+      - [A workflow for a custom rendering pipeline](https://github.com/journalovi/2024-luong-graphical-models/blob/main/.github/workflows/publish.yml).
+      This is was adapted from the Idyll workflow by changing the lines that run `node` and `npm` and ensuring the last step copies the
+      correct output folder to the `gh-pages` branch.
+      
+      - For static HTML + JavaScript, a rendering workflow is not required. Simply write your paper in `index.html` in the root folder of the repository.
+
+
+      **If you are not experienced using Github Pages**, it is not required for you to set it up prior to submitting (though it will make 
+      processing your submission faster). Leave this checkbox blank and the Tech Chair will assist you.      
+    options:
+    - label: I have set up Github Pages
 - type: textarea
   attributes:
     label: Authors
@@ -78,6 +169,13 @@ body:
       - People who might be natural reviewers of your paper but with whom you have a conflict.
   validations:
     required: true
+- type: input
+  attributes:
+    label: Source repository URL
+    description: >
+      Provide the URL of the respository containing your paper (e.g., a Github repository). We will clone this repository into the JoVI organization.
+  validations:
+    required: true
 - type: dropdown
   attributes:
     label: Article format
@@ -99,100 +197,3 @@ body:
     description: >
       If you answered "Other/Unsure" above, describe your paper format or required technical setup. If the details are in a file 
       in your repository (such as a README), you may also refer to that file.
-- type: checkboxes
-  attributes:
-    label: Github Pages setup
-    description: >
-      Experimental track papers are served as HTML from [journalovi.org](https://www.journalovi.org/) using [Github Pages](https://pages.github.com/).
-      Use this box to indicated if you have already set up Github Pages on your submitted repository.
-
-
-      **If you are experienced using Github Pages**, we recommend setting up Github Pages rendering on your own repository prior to submitting
-      your paper. This will make it easier for the Tech Chair to adapt your paper to work with our setup. The most important aspect of the
-      setup is that you have a Github action that renders your paper when the source it changes. Some examples:
-
-
-      - [A workflow for Quarto papers](https://github.com/journalovi/jovi-template-quarto/blob/main/.github/workflows/publish.yml). If you used
-      the [JoVI Quarto template](https://github.com/journalovi/jovi-template-quarto) to write your paper, this is already set up for you and
-      you can tick the box below.
-
-      - [A workflow for Idyll papers](https://github.com/journalovi/2024-Cashman-PAC-learning-game/blob/master/.github/workflows/publish.yml). 
-      
-      - [A workflow for a custom rendering pipeline](https://github.com/journalovi/2024-luong-graphical-models/blob/main/.github/workflows/publish.yml).
-      This is was adapted from the Idyll workflow by changing the lines that run `node` and `npm` and ensuring the last step copies the
-      correct output folder to the `gh-pages` branch.
-      
-      - For static HTML + JavaScript, a rendering workflow is not required. Simply write your paper in `index.html` in the root folder of the repository.
-
-
-      **If you are not experienced using Github Pages**, it is not required for you to set it up prior to submitting (though it will make 
-      processing your submission faster). Leave this checkbox blank and the Tech Chair will assist you.      
-    options:
-    - label: I have set up Github Pages
-- type: checkboxes
-  attributes:
-    label: Technical checklist
-    description: >
-      These checks help ensure that your rendered article contains the required information. If you are unsure
-      of any of these checkboxes, leave them blank. Then, after creating this issue, reply with a comment explaining what 
-      you are unsure about. The Tech Chair will reply and help get your submission set up.
-
-
-      In particular, we require the `<title></title>` tag of the rendered article contains the title of the paper as this
-      is used in some of our paper listing scripts.
-
-
-      We also require an infobox to be placed at the top of the paper indicating the paper is under review at JoVI.
-
-
-      In Quarto this looks like:
-      
-      
-      ```
-      
-      ::: {.callout-important appearance="simple"}
-      
-      ## Under Review {.unnumbered}
-      
-      This paper is [under review](https://www.journalovi.org/under-review.html) on the experimental track of
-      
-      the [Journal of Visualization and Interaction](https://www.journalovi.org/). See the 
-      
-      [reviewing process](https://github.com/journalovi/20xx-repo-name/issues).
-      
-      :::
-      
-      ```
-      
-      
-      In HTML this could be:
-      
-      ```
-      
-      <p><strong>Under Review:</strong> This paper is <a href="https://www.journalovi.org/under-review.html">under review</a>
-      
-      on the experimental track of the <a href="https://www.journalovi.org/">Journal of Visualization and Interaction</a>.
-      
-      See the <a href="https://github.com/journalovi/20xx-repo-name/issues">reviewing process</a>.</p>
-      
-      ```
-    options:
-    - label: The `<title>` tag of my page contains the title of my article
-    - label: The article contains an infobox indicating it is under review at JoVI
-  validations:
-    required: true
-- type: checkboxes
-  attributes:
-    label: Required sections
-    description: >
-      Ensure your article has the following required sections (not necessarily in the order listed below). Details of
-      each section are in the [Author Guidelines](https://www.journalovi.org/author-guide.html#sections).
-    options:
-    - label: Abstract
-    - label: A navigational aid, such as a table of contents, links or buttons between sections, or an option to switch between paper-mode and interactive mode (for more interactive/experimental articles). Some articles (e.g,. narrative visualization) might lend themselves to be progressively disclosed without an overview.
-    - label: Research materials
-    - label: Authorship statement (leave a placeholder if submitting anonymously)
-    - label: License (CC-BY or CC-BY-SA).
-    - label: Conflicts of Interest
-  validations:
-    required: true
