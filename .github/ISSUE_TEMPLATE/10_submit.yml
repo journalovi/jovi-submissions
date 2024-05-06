@@ -130,6 +130,34 @@ body:
       processing your submission faster). Leave this checkbox blank and the Tech Chair will assist you.      
     options:
     - label: I have set up Github Pages
+- type: input
+  attributes:
+    label: Source repository URL
+    description: >
+      Provide the URL of the respository containing your paper (e.g., a Github repository). We will clone this repository into the JoVI organization.
+  validations:
+    required: true
+- type: dropdown
+  attributes:
+    label: Article format
+    description: >
+      What format and technical setup does your paper require? If it is "Other/Unsure", provide a description below.
+    options:
+    - 
+    - Quarto
+    - Idyll
+    - RMarkdown
+    - Static HTML + JavaScript (e.g. Distill)
+    - Shiny
+    - Other/Unsure (describe below)
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Article format details
+    description: >
+      If you answered "Other/Unsure" above, describe your paper format or required technical setup. If the details are in a file 
+      in your repository (such as a README), you may also refer to that file.
 - type: textarea
   attributes:
     label: Authors
@@ -169,31 +197,3 @@ body:
       - People who might be natural reviewers of your paper but with whom you have a conflict.
   validations:
     required: true
-- type: input
-  attributes:
-    label: Source repository URL
-    description: >
-      Provide the URL of the respository containing your paper (e.g., a Github repository). We will clone this repository into the JoVI organization.
-  validations:
-    required: true
-- type: dropdown
-  attributes:
-    label: Article format
-    description: >
-      What format and technical setup does your paper require? If it is "Other/Unsure", provide a description below.
-    options:
-    - 
-    - Quarto
-    - Idyll
-    - RMarkdown
-    - Static HTML + JavaScript (e.g. Distill)
-    - Shiny
-    - Other/Unsure (describe below)
-  validations:
-    required: true
-- type: textarea
-  attributes:
-    label: Article format details
-    description: >
-      If you answered "Other/Unsure" above, describe your paper format or required technical setup. If the details are in a file 
-      in your repository (such as a README), you may also refer to that file.
